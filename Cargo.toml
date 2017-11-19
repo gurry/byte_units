@@ -1,7 +1,13 @@
 [package]
-authors = ["Gurinder Singh <gurinder.singh@1e.com>"]
+authors = ["Gurinder Singh <frederick.the.fool@gmail.com>"]
 name = "byte_units"
 version = "0.1.0"
+description = "A crate that provides types for byte units (such as KiB, MiB etc.)"
+
+#documentation = ""
+#homepage = ""
+repository = "https://github.com/gurry/byte_units"
+readme = "README.md"
 
 [dependencies]
 error-chain = "0.11.0"
