@@ -1,6 +1,7 @@
 [package]
+authors = ["Gurinder Singh <gurinder.singh@1e.com>"]
 name = "byte_units"
 version = "0.1.0"
-authors = ["Gurinder Singh <gurinder.singh@1e.com>"]
 
 [dependencies]
+error-chain = "0.11.0"
