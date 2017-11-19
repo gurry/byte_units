@@ -6,8 +6,8 @@ mod errors {
 
 use self::errors::*;
 
-// TODO: Replace all explicit From impls with a rust which takes a conversion multiple and the two types
-// TODO: also add bits, bps, kbps etc
+// TODO: Replace all explicit From impls with a rust macro which takes a conversion multiple and the two types involved
+// TODO: also add units for bits, bps, kbps etc
 
 pub struct Bytes(u64);
 pub type B = Bytes;
