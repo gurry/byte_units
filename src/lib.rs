@@ -1,7 +1,7 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
+pub struct Bytes(u64);
+pub type B = Bytes;
+
+
+pub struct KiB(u64);
+pub struct MiB(u64);
+pub struct GiB(u64);
