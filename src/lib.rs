@@ -9,14 +9,14 @@ use self::errors::*;
 // TODO: Replace all explicit From impls with a rust macro which takes a conversion multiple and the two types involved
 // TODO: also add units for bits, bps, kbps etc
 
-pub struct Bytes(u64);
+pub struct Bytes(pub u64);
 pub type B = Bytes;
 
-pub struct kB(f64);
-pub struct MB(f64);
-pub struct GB(f64);
+pub struct kB(pub f64);
+pub struct MB(pub f64);
+pub struct GB(pub f64);
 
-pub struct KiB(f64);
+pub struct KiB(pub f64);
 
 impl From<Bytes> for KiB {
     fn from(bytes: Bytes) -> Self {
