@@ -7,6 +7,9 @@ mod errors {
 use self::errors::*;
 
 // TODO: Also add units for bits, bps, kbps etc
+// TODO: in the constructors check that incoming float does not have excessive precision. The precision should not be such that one converted to bytes we get a fractional value
+// TODO: think of how the u64 in Bytes can overflow when converting down from higher units (like KiB) and how to guard against it
+// One of option with the above two point is to silently truncate. That'll make the API simpler, but will it be safe enough for the user? Is it enough if we just mention lossiness in the docs?
 
 macro_rules! impl_conv {
     ($type_from:tt, $type_to:tt, $multiple:expr) => {
