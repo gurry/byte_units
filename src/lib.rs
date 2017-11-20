@@ -26,25 +26,25 @@ pub type B = Bytes;
 
 pub struct kB(pub f64);
 
-impl_conv!(Bytes, kB, 1.0 / 1000.0);
+impl_conv!(Bytes, kB, 1_f64 / 1000_f64);
 
 pub struct MB(pub f64);
 
-impl_conv!(Bytes, MB, 1.0 / 1000_000.0);
+impl_conv!(Bytes, MB, 1_f64 / 1000_000_f64);
 
 pub struct GB(pub f64);
 
-impl_conv!(Bytes, GB, 1.0 / 1000_000_000.0);
+impl_conv!(Bytes, GB, 1_f64 / 1000_000_000_f64);
 
 
 pub struct KiB(pub f64);
 
-impl_conv!(Bytes, KiB, 1.0 / 1024.0);
+impl_conv!(Bytes, KiB, 1_f64 / 1024_f64);
 
 pub struct MiB(f64);
 
-impl_conv!(Bytes, MiB, 1.0 / 1048_576.0);
+impl_conv!(Bytes, MiB, 1_f64 / 1048_576_f64);
 
 pub struct GiB(f64);
 
-impl_conv!(Bytes, GiB, 1.0 / 1073_741_824.0);
+impl_conv!(Bytes, GiB, 1_f64 / 1073_741_824_f64);
