@@ -11,6 +11,8 @@ use self::errors::*;
 // TODO: think of how the u64 in Bytes can overflow when converting down from higher units (like KiB) and how to guard against it
 // One of option with the above two point is to silently truncate. That'll make the API simpler, but will it be safe enough for the user? Is it enough if we just mention lossiness in the docs?
 // TODO: Provide and additional way to automatically choose the most convenient unit while displaying. For instance 512 bytes should display as "512 Bytes" but 1024 bytes should display as "1 KiB"
+// TODO: Add support for parsing these types from strings as well
+// TODO: Impl mathematical operators on these types using newtype_derive
 
 macro_rules! impl_conv {
     ($type_from:tt, $type_to:tt, $multiple:expr) => {
