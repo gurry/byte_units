@@ -4,6 +4,9 @@ mod errors {
     error_chain! { }
 }
 
+#[macro_use] 
+extern crate serde_derive;
+
 use self::errors::*;
 
 // TODO: Also add units for bits, bps, kbps etc
@@ -24,30 +27,36 @@ macro_rules! impl_conv {
     };
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct Bytes(pub u64);
 pub type B = Bytes;
 
+#[derive(Serialize, Deserialize)]
 pub struct kB(pub f64);
 
 impl_conv!(Bytes, kB, 1_f64 / 1000_f64);
 
+#[derive(Serialize, Deserialize)]
 pub struct MB(pub f64);
 
 impl_conv!(Bytes, MB, 1_f64 / 1000_000_f64);
 
+#[derive(Serialize, Deserialize)]
 pub struct GB(pub f64);
 
 impl_conv!(Bytes, GB, 1_f64 / 1000_000_000_f64);
 
-
+#[derive(Serialize, Deserialize)]
 pub struct KiB(pub f64);
 
 impl_conv!(Bytes, KiB, 1_f64 / 1024_f64);
 
+#[derive(Serialize, Deserialize)]
 pub struct MiB(f64);
 
 impl_conv!(Bytes, MiB, 1_f64 / 1048_576_f64);
 
+#[derive(Serialize, Deserialize)]
 pub struct GiB(f64);
 
 impl_conv!(Bytes, GiB, 1_f64 / 1073_741_824_f64);

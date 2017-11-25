@@ -1,7 +1,7 @@
 [package]
 authors = ["Gurinder Singh <frederick.the.fool@gmail.com>"]
 name = "byte_units"
-version = "0.1.2"
+version = "0.1.3"
 description = "A crate that provides types for byte units (such as KiB, MiB etc.)"
 
 #documentation = ""
@@ -13,3 +13,5 @@ license= "MIT"
 
 [dependencies]
 error-chain = "0.11.0"
+serde = "1.0.21"
+serde_derive = "1.0.21"
