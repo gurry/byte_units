@@ -16,6 +16,7 @@ use self::errors::*;
 // TODO: Provide and additional way to automatically choose the most convenient unit while displaying. For instance 512 bytes should display as "512 Bytes" but 1024 bytes should display as "1 KiB"
 // TODO: Add support for parsing these types from strings as well
 // TODO: Impl mathematical operators on these types using newtype_derive
+// TODO: Make the serde dependency an optional feature
 
 macro_rules! impl_conv {
     ($type_from:tt, $type_to:tt, $multiple:expr) => {
