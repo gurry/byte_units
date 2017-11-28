@@ -19,7 +19,7 @@ use self::errors::*;
 // TODO: Impl mathematical operators on these types using newtype_derive
 // TODO: Make the serde dependency an optional feature
 
-macro_rules! impl_cast_to_inner {
+macro_rules! impl_cast {
     ($type_from:ty, $type_to:ty) => {
         impl From<$type_from> for $type_to {
             fn from(from_obj: $type_from) -> Self {
@@ -67,47 +67,50 @@ macro_rules! impl_binary_ops {
 pub struct Bytes(pub u64);
 pub type B = Bytes;
 
-impl_cast_to_inner!(Bytes, u64);
+impl_cast!(Bytes, u64);
+impl_cast!(Bytes, i64);
+impl_cast!(Bytes, f32);
+impl_cast!(Bytes, f64);
 impl_binary_ops_self!(Bytes);
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct kB(pub f64);
 
-impl_cast_to_inner!(kB, f64);
+impl_cast!(kB, f64);
 impl_conv!(Bytes, kB, 1_f64 / 1000_f64);
 impl_binary_ops_self!(kB);
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MB(pub f64);
 
-impl_cast_to_inner!(MB, f64);
+impl_cast!(MB, f64);
 impl_conv!(Bytes, MB, 1_f64 / 1000_000_f64);
 impl_binary_ops_self!(MB);
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct GB(pub f64);
 
-impl_cast_to_inner!(GB, f64);
+impl_cast!(GB, f64);
 impl_conv!(Bytes, GB, 1_f64 / 1000_000_000_f64);
 impl_binary_ops_self!(GB);
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct KiB(pub f64);
 
-impl_cast_to_inner!(KiB, f64);
+impl_cast!(KiB, f64);
 impl_conv!(Bytes, KiB, 1_f64 / 1024_f64);
 impl_binary_ops_self!(KiB);
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MiB(f64);
 
-impl_cast_to_inner!(MiB, f64);
+impl_cast!(MiB, f64);
 impl_conv!(Bytes, MiB, 1_f64 / 1048_576_f64);
 impl_binary_ops_self!(MiB);
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct GiB(f64);
 
-impl_cast_to_inner!(GiB, f64);
+impl_cast!(GiB, f64);
 impl_conv!(Bytes, GiB, 1_f64 / 1073_741_824_f64);
 impl_binary_ops_self!(GiB);
