@@ -19,7 +19,7 @@ use self::errors::*;
 // TODO: Make the serde dependency an optional feature
 
 macro_rules! impl_cast_to_inner {
-    ($type_from:tt, $type_to:ty) => {
+    ($type_from:ty, $type_to:ty) => {
         impl From<$type_from> for $type_to {
             fn from(from_obj: $type_from) -> Self {
                 from_obj.0 as $type_to
@@ -28,8 +28,9 @@ macro_rules! impl_cast_to_inner {
     };
 }
 
+// TODO: Find a way to change the second argument of this macro from tt to ty 
 macro_rules! impl_conv {
-    ($type_from:tt, $type_to:tt, $multiple:expr) => {
+    ($type_from:ty, $type_to:tt, $multiple:expr) => {
         impl From<$type_from> for $type_to {
             fn from(from_obj: $type_from) -> Self {
                 $type_to(from_obj.0 as f64 * $multiple)
