@@ -18,6 +18,7 @@ use self::errors::*;
 // TODO: Add support for parsing these types from strings as well
 // TODO: Impl mathematical operators on these types using newtype_derive
 // TODO: Make the serde dependency an optional feature
+// TODO: Maybe we should implement TryFrom instead of From for fallible conversions (such as  because of size overflow especially when coming down from bigger units to Bytes)
 
 macro_rules! impl_cast {
     ($type_from:ty, $type_to:ty) => {
