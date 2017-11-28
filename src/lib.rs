@@ -68,6 +68,8 @@ pub struct Bytes(pub u64);
 pub type B = Bytes;
 
 impl_cast!(Bytes, u64);
+impl_cast!(Bytes, u32);
+impl_cast!(Bytes, usize);
 impl_cast!(Bytes, i64);
 impl_cast!(Bytes, f32);
 impl_cast!(Bytes, f64);
