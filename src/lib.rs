@@ -63,7 +63,7 @@ macro_rules! impl_binary_ops {
     };
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Copy, Clone, Debug)]
 pub struct Bytes(pub u64);
 pub type B = Bytes;
 
