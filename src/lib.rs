@@ -19,6 +19,7 @@ use self::errors::*;
 // TODO: Impl mathematical operators on these types using newtype_derive
 // TODO: Make the serde dependency an optional feature
 // TODO: Maybe we should implement TryFrom instead of From for fallible conversions (such as  because of size overflow especially when coming down from bigger units to Bytes)
+// TODO: Look at the traits implemented by u64 (https://doc.rust-lang.org/std/primitive.u64.html). We should also implement all these traits perhaps.
 
 macro_rules! impl_cast {
     ($type_from:ty, $type_to:ty) => {
